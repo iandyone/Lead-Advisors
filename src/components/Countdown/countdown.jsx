@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 export default function Countdown(props) {
     const { className } = props;
     const eventDate = new Date(`May 31 ${new Date().getFullYear() + 1} 00:00:00`);
+    const [mobileFlag, setMobileFlag] = useState(false);
+
     const [restTime, setRestTime] = useState({
         days: 0,
         hours: 0,
@@ -35,25 +37,35 @@ export default function Countdown(props) {
         return (value < 10) ? `0${value}` : value;
     }
 
-    function onResize (newTimeFormat) {
-        if( window.innerWidth <= 768 ) {
+    function onResize(newTimeFormat) {
+        if (window.innerWidth <= 768) {
             setTimeFormat(newTimeFormat)
         }
-     }
+    }
+
+    useState(() => {
+        if (window.innerWidth <= 768) {
+            setMobileFlag(true);
+        } else {
+            setMobileFlag(false)
+        }
+    })
 
     useEffect(() => {
         setInterval(eventDateCounter, 1000);
     })
 
     useEffect(() => {
-        const newTimeFormat = {
-            days: 'DD',
-            hours: 'HH',
-            minutes: 'MM',
-            seconds: 'SS'
+        if (mobileFlag) {
+            const newTimeFormat = {
+                days: 'DD',
+                hours: 'HH',
+                minutes: 'MM',
+                seconds: 'SS'
+            }
+            window.addEventListener('resize', onResize);
+            onResize(newTimeFormat);
         }
-        window.addEventListener('resize', onResize);
-        onResize(newTimeFormat);
 
         return () => window.removeEventListener('resize', onResize);
     }, []);

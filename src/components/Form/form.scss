@@ -30,13 +30,17 @@
             font-size: 14px;
             padding: 16px 18px;
         }
+
+        @media (max-width: 480px) {
+            width: 280px;
+        }
     }
 
     &__button {
         position: absolute;
         right: -55px;
-        width: 33px;
-        height: 33px;
+        width: 44px;
+        height: 44px;
         // background-color: $red;
         transform: translateX(-60px);
         border-radius: 50%;
@@ -44,5 +48,10 @@
         justify-content: center;
         align-items: center;
         background: url("../../assets/images//svg/arrow-right.svg") center no-repeat, $red;
+
+        @media (max-width: 992px) {
+            width: 33px;
+            height: 33px;
+        }
     }
 }

@@ -30,4 +30,8 @@
         font-size: 36px;
         right: -5px;
     }
+
+    @media (max-width: 480px) {
+        right: -9px;
+    }
 }

@@ -15,12 +15,17 @@
         width: 470px;
         height: 419px;
         background: url("../../assets/images/svg/decor-left.svg") center / contain no-repeat;
-        
+
         @media (max-width: 992px) {
             left: -20px;
             top: -15px;
             width: 279px;
             height: 222px;
+        }
+
+        @media (max-width: 480px) {
+            left: -43px;
+            top: -71px;
         }
     }
 
@@ -39,17 +44,19 @@
             height: 301px;
             background: url("../../assets/images/svg/decor-right2.svg") center / contain no-repeat;
         }
+
+        @media (max-width: 480px) {
+            right: -37px;
+            top: -52px;
+        }
     }
 
     &__preview {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
-
-        
     }
 }
-
 
 .preview {
     &__body {
@@ -63,17 +70,27 @@
         @media (max-width: 992px) {
             padding-top: 100px;
         }
+        
+        @media (max-width: 480px) {
+            padding-top: 80px;
+        }
     }
 
     &__logo {
         margin-bottom: 93px;
-        
+
         @media (max-width: 992px) {
             margin-bottom: 162px;
+        }
+
+        @media (max-width: 480px) {
+            width: 128px;
+            margin-bottom: 62px;
         }
     }
 
     &__image {
+        width: 100%;
     }
 
     &__header {
@@ -103,6 +120,11 @@
             font-size: 36px;
             line-height: 104%;
             margin-bottom: 22px;
+        }
+
+        @media (max-width: 480px) {
+            text-align: center;
+            margin-bottom: 17px;
         }
     }
 

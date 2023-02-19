@@ -13,6 +13,11 @@
 
         @media (max-width: 992px) {
             row-gap: 15px;
+            min-height: 160px;
+        }
+
+        @media (max-width: 480px) {
+            min-height: 140px;
         }
     }
 
@@ -25,6 +30,11 @@
             color: $white;
             padding-right: 35px;
             background: url('../../assets/images/svg/arrow-down.svg') right center no-repeat;
+
+            @media (max-width: 992px) {
+                font-size: 16px;
+                
+            }
             
         }
 
