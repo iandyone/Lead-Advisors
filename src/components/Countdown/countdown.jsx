@@ -10,6 +10,13 @@ export default function Countdown(props) {
         hours: 0,
         minutes: 0,
         seconds: 0,
+    });
+
+    const [timeFormat, setTimeFormat] = useState({
+        days: 'Days',
+        hours: 'Hours',
+        minutes: 'Minutes',
+        seconds: 'Seconds'
     })
 
     function eventDateCounter() {
@@ -28,16 +35,35 @@ export default function Countdown(props) {
         return (value < 10) ? `0${value}` : value;
     }
 
+    function onResize (newTimeFormat) {
+        if( window.innerWidth <= 768 ) {
+            setTimeFormat(newTimeFormat)
+        }
+     }
+
     useEffect(() => {
         setInterval(eventDateCounter, 1000);
     })
 
+    useEffect(() => {
+        const newTimeFormat = {
+            days: 'DD',
+            hours: 'HH',
+            minutes: 'MM',
+            seconds: 'SS'
+        }
+        window.addEventListener('resize', onResize);
+        onResize(newTimeFormat);
+
+        return () => window.removeEventListener('resize', onResize);
+    }, []);
+
     return (
         <div className={`${className} countdown`}>
-            <Timer className={'countdown__timer'} scale='Days' value={restTime.days} />
-            <Timer className={'countdown__timer'} scale='Hours' value={restTime.hours} />
-            <Timer className={'countdown__timer'} scale='Minutes' value={restTime.minutes} />
-            <Timer className={'countdown__timer'} scale='Seconds' value={restTime.seconds} />
+            <Timer className={'countdown__timer'} scale={timeFormat.days} value={restTime.days} />
+            <Timer className={'countdown__timer'} scale={timeFormat.hours} value={restTime.hours} />
+            <Timer className={'countdown__timer'} scale={timeFormat.minutes} value={restTime.minutes} />
+            <Timer className={'countdown__timer'} scale={timeFormat.seconds} value={restTime.seconds} />
         </div>
     );
 }

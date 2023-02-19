@@ -23,13 +23,20 @@
         line-height: 150%;
         color: rgba(0, 0, 0, 0.6);
         padding: 16px 27px;
+
+        @media (max-width: 992px) {
+            width: 360px;
+            height: 41px;
+            font-size: 14px;
+            padding: 16px 18px;
+        }
     }
 
     &__button {
         position: absolute;
-        right: -53px;
-        width: 43px;
-        height: 43px;
+        right: -55px;
+        width: 33px;
+        height: 33px;
         // background-color: $red;
         transform: translateX(-60px);
         border-radius: 50%;
