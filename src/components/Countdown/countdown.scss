@@ -1,0 +1,23 @@
+@import "../../scss/variables.scss";
+
+.countdown {
+    display: flex;
+    column-gap: 20px;
+    margin-bottom: 72px;
+}
+
+.countdown > *:not(:last-child) {
+    position: relative;
+}
+
+.countdown > *:not(:last-child):before {
+    content: ":";
+    position: absolute;
+    right: -25px;
+    top: 0;
+
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 100%;
+    color: $blue;
+}

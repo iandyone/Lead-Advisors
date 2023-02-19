@@ -1,0 +1,34 @@
+@import "../../scss/variables.scss";
+@import "../../scss/templates.scss";
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3px;
+
+    &__value {
+        font-family: $Poppins;
+        font-weight: 600;
+        font-size: 72px;
+        line-height: 100%;
+        color: $blue;
+        min-width: 96px;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__scale {
+        height: 55px;
+        width: 132px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url("../../assets/images/bg-figure.png") center / cover no-repeat;
+        @extend %text;
+        font-size: 16px;
+        line-height: 100%;
+        color: $white;
+    }
+}

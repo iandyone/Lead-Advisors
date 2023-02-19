@@ -1,0 +1,26 @@
+@import "../../scss/variables.scss";
+@import "../../scss/templates.scss";
+
+.subscribe {
+    &__body {
+        // min-height: 192px;
+        min-height: 180px;
+        background-color: $blue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__link {
+        position: absolute;
+        right: 111px;
+        span {
+            @extend %text;
+            font-size: 20px;
+            color: $white;
+            padding-right: 35px;
+            background: url('../../assets/images/svg/arrow-down.svg') right center no-repeat;
+            
+        }
+    }
+}

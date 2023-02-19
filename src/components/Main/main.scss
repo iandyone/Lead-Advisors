@@ -1,0 +1,113 @@
+@import "../../scss//variables.scss";
+@import "../../scss//templates.scss";
+
+.main {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 470px;
+        height: 419px;
+        background: url("../../assets/images/svg/decor-left.svg") center no-repeat;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 272px;
+        height: 327px;
+        background: url("../../assets/images/svg/decor-right.svg") center no-repeat;
+    }
+
+    &__preview {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+
+        
+    }
+}
+
+
+.preview {
+    &__body {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        // justify-content: space-between;
+        padding: 60px 0 76px 0;
+    }
+
+    &__logo {
+        margin-bottom: 93px;
+    }
+
+    &__image {
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 29px;
+    }
+
+    &__title {
+        font-family: $Poppins;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 72px;
+        line-height: 104%;
+        text-transform: uppercase;
+        color: $blue;
+        opacity: 0.39;
+        margin-bottom: 8px;
+    }
+
+    &__subtitle {
+        @extend %text;
+        text-align: center;
+        max-width: 425px;
+    }
+
+    &__countdown {
+    }
+
+    &__link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__text {
+        @extend %text;
+        margin-bottom: 12px;
+    }
+
+    &__button {
+        @extend %text;
+        width: 240px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        background: $blue2;
+        border-radius: 40px;
+
+        span {
+            padding-right: 47px;
+            background: url("../../assets/images/svg/arrow-right.svg") right center no-repeat;
+        }
+    }
+}
