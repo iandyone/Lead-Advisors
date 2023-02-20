@@ -10,7 +10,8 @@ const counterSlice = createSlice({
     reducers: {
         setPopupActivity(state, action) {
             state.isPopupActive = action.payload;
-        }
+        },
+
     }
 })
 

@@ -3,16 +3,15 @@
 
 .subscribe {
     &__body {
-        // min-height: 192px;
         min-height: 180px;
         background-color: $blue;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        row-gap: 15px;
 
         @media (max-width: 992px) {
-            row-gap: 15px;
             min-height: 160px;
         }
 
