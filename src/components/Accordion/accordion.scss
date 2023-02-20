@@ -1,0 +1,18 @@
+@import "../../scss//templates.scss";
+@import "../../scss//variables.scss";
+
+.accordion {
+    display: flex;
+    height: 685px;
+    align-self: flex-start;
+    display: flex;
+    column-gap: 4px;
+    
+    @media (max-width: 1600px) {
+        height: 550px;
+    }
+    @media (max-width: 1100px) {
+        height: 450px;
+        column-gap: 5px;
+    }
+}
