@@ -18,7 +18,7 @@ export default function Main() {
                     <Countdown className="preview__countdown"/>
                     <div className="preview__link">
                         <p className="preview__text">Check our event page when you wait:</p>
-                        <a href="www.google.com" className="preview__button" target='_blank'><span>Go to the event</span></a>
+                        <a href="http://www.google.com" className="preview__button" target='_blank' rel='noreferrer'><span>Go to the event</span></a>
                     </div>
                 </section>
                 <Subscribe/>

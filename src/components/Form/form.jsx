@@ -1,16 +1,19 @@
 import axios from "axios";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setPopupActivity } from "../../store/reducers/popupSlice";
 import "./form.scss";
 
 
 export default function Form(props) {
     const { className, API_URL } = props;
-    const [email, setEmail] = useState('')
+    const [email, setEmail] = useState('');
+    const dispatch = useDispatch();
 
     async function submit(e) {
         e.preventDefault();
         try {
-            alert(email);
+            dispatch(setPopupActivity(true));
             const response = await axios.post(API_URL, {
                 email: email
             })

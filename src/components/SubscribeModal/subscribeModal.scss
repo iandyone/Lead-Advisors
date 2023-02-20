@@ -1,0 +1,51 @@
+@import "../../scss/variables.scss";
+@import "../../scss/templates.scss";
+
+.modal {
+    &__body {
+        width: 320px;
+        height: 370px;
+        background-color: $white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 15px;
+    }
+
+    &__close-button {
+        width: 25px;
+        height: 25px;
+        background: url("../../assets/images/svg/mark.svg") center no-repeat;
+        align-self: flex-end;
+        margin-bottom: 48px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 104%;
+        text-align: center;
+        text-transform: uppercase;
+        color: $blue;
+        margin-bottom: 28px
+    }
+
+    &__text {
+        @extend %text;
+        font-size: 16px;
+        max-width: 280px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    &__button {
+        @extend %button;
+        width: 200px;
+
+        
+    }
+}

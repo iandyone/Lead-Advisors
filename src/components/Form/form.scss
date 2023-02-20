@@ -1,7 +1,6 @@
 @import "../../scss/variables.scss";
 
 .form {
-    // width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +40,6 @@
         right: -55px;
         width: 44px;
         height: 44px;
-        // background-color: $red;
         transform: translateX(-60px);
         border-radius: 50%;
         display: flex;

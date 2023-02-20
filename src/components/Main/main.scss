@@ -16,14 +16,14 @@
         height: 419px;
         background: url("../../assets/images/svg/decor-left.svg") center / contain no-repeat;
 
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             left: -20px;
             top: -15px;
             width: 279px;
             height: 222px;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 620px) {
             left: -43px;
             top: -71px;
         }
@@ -37,7 +37,7 @@
         width: 272px;
         height: 327px;
         background: url("../../assets/images/svg/decor-right.svg") center / contain no-repeat;
-        @media (max-width: 992px) {
+        @media (max-width: 1200px) {
             right: -7px;
             top: 0;
             width: 293px;
@@ -45,7 +45,7 @@
             background: url("../../assets/images/svg/decor-right2.svg") center / contain no-repeat;
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 620px) {
             right: -37px;
             top: -52px;
         }
@@ -139,8 +139,7 @@
         }
     }
 
-    &__countdown {
-    }
+ 
 
     &__link {
         display: flex;
@@ -155,16 +154,7 @@
     }
 
     &__button {
-        @extend %text;
-        font-size: 18px;
-        width: 240px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $white;
-        background: $blue2;
-        border-radius: 40px;
+       @extend %button;
 
         span {
             padding-right: 47px;

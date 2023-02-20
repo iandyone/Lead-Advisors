@@ -6,7 +6,7 @@ export default function Subscribe() {
         <div className="subscribe">
             <div className="subscribe__body">
                 <Form className={'subscribe__form'} API_URL='http://localhost:5000' />
-                <a href="#" className="subscribe__link"><span>Other Events</span></a>
+                <a href="#all-events" className="subscribe__link"><span>Other Events</span></a>
             </div>
         </div>
     );
