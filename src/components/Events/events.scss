@@ -11,6 +11,10 @@
         padding: 45px 0px;
     }
 
+    @media (max-width: 480px) {
+        padding: 60px 0px;
+    }
+
     &__title {
         @extend %title;
         margin-bottom: 40px;
