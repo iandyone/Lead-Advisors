@@ -10,44 +10,42 @@
     &::before {
         content: "";
         position: absolute;
-        left: 0;
-        top: 0;
+        top: -200px;
+        left: -200px;
         width: 470px;
         height: 419px;
         background: url("../../assets/images/svg/decor-left.svg") center / contain no-repeat;
+        animation: showLeftDecor 0.7s ease 0.6s 1 normal forwards;
 
         @media (max-width: 1200px) {
-            left: -20px;
-            top: -15px;
             width: 279px;
             height: 222px;
+            animation: showLeftDecorMedium 0.7s ease 0.6s 1 normal forwards;
         }
 
         @media (max-width: 620px) {
-            left: -43px;
-            top: -71px;
+            animation: showLeftDecorSmall 0.7s ease 0.6s 1 normal forwards;
         }
     }
 
     &::after {
         content: "";
         position: absolute;
-        right: 0;
-        top: 0;
+        top: -200px;
+        right: -200px;
         width: 272px;
         height: 327px;
         background: url("../../assets/images/svg/decor-right.svg") center / contain no-repeat;
+        animation: showRightDecor 0.7s ease 0.6s 1 normal forwards;
+
         @media (max-width: 1200px) {
-            right: -7px;
-            top: 0;
             width: 293px;
             height: 301px;
             background: url("../../assets/images/svg/decor-right2.svg") center / contain no-repeat;
         }
 
         @media (max-width: 620px) {
-            right: -37px;
-            top: -52px;
+            animation: showRightDecorSmall 0.7s ease 0.6s 1 normal forwards;
         }
     }
 
@@ -70,7 +68,7 @@
         @media (max-width: 992px) {
             padding-top: 100px;
         }
-        
+
         @media (max-width: 480px) {
             padding-top: 80px;
         }
@@ -139,8 +137,6 @@
         }
     }
 
- 
-
     &__link {
         display: flex;
         flex-direction: column;
@@ -154,11 +150,73 @@
     }
 
     &__button {
-       @extend %button;
+        @extend %button;
 
         span {
             padding-right: 47px;
             background: url("../../assets/images/svg/arrow-right.svg") right center no-repeat;
         }
     }
+}
+
+
+@keyframes showLeftDecor {
+    from {
+        top: -200px;
+        left: -200px;
+    }
+
+    to {
+        left: 0;
+        top: 0;
+    }
+}
+
+@keyframes showLeftDecorMedium {
+    from {
+        top: -200px;
+        left: -200px;
+    }
+
+    to {
+        left: -20px;
+        top: -15px;
+    }
+}
+
+@keyframes showLeftDecorSmall {
+    from {
+        top: -200px;
+        left: -200px;
+    }
+    to {
+        left: -43px;
+        top: -71px;
+    }
+}
+
+@keyframes showRightDecor {
+    from {
+        top: -200px;
+        right: -200px;
+    }
+
+    to {
+        right: -7px;
+        top: 0;
+    }
+    
+}
+
+@keyframes showRightDecorSmall {
+    from {
+        top: -200px;
+        right: -200px;
+    }
+
+    to {
+        right: -37px;
+        top: -52px;
+    }
+    
 }

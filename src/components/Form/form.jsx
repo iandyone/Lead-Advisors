@@ -14,6 +14,7 @@ export default function Form(props) {
         e.preventDefault();
         try {
             dispatch(setPopupActivity(true));
+            setEmail('');
             const response = await axios.post(API_URL, {
                 email: email
             })

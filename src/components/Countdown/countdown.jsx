@@ -8,10 +8,10 @@ export default function Countdown(props) {
     const [mobileFlag, setMobileFlag] = useState(false);
 
     const [restTime, setRestTime] = useState({
-        days: 0,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
+        days: "00",
+        hours: "00",
+        minutes: "00",
+        seconds: "00",
     });
 
     const [timeFormat, setTimeFormat] = useState({
@@ -34,7 +34,7 @@ export default function Countdown(props) {
     }
 
     function getValidValue(value) {
-        return (value < 10) ? `0${value}` : value;
+        return (+value < 10) ? `0${+value}` : value;
     }
 
     function onResize(newTimeFormat) {
@@ -71,7 +71,7 @@ export default function Countdown(props) {
     }, []);
 
     return (
-        <div className={`${className} countdown`}>
+        <div className={`${className} countdown`} data-aos="fade-down" data-aos-delay="500" data-aos-duration="800">
             <Timer className={'countdown__timer'} scale={timeFormat.days} value={restTime.days} />
             <Timer className={'countdown__timer'} scale={timeFormat.hours} value={restTime.hours} />
             <Timer className={'countdown__timer'} scale={timeFormat.minutes} value={restTime.minutes} />
