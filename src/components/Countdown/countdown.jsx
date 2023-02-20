@@ -68,7 +68,7 @@ export default function Countdown(props) {
         }
 
         return () => window.removeEventListener('resize', onResize);
-    },  );
+    }, [] );
 
     return (
         <div className={`${className} countdown`} data-aos="fade-down" data-aos-delay="500" data-aos-duration="800">

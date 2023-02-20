@@ -2,7 +2,7 @@ import './slide.scss';
 
 export default function Slide(props) {
     const { className, id, title, image, isActive, handlerOnChange } = props;
-    const slideClass = (isActive) ? 'slide' : 'slide active';
+    const slideClass = (isActive) ? 'slide active' : 'slide';
 
 
     return (
