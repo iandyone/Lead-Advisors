@@ -5,21 +5,27 @@ import { useEffect, useState } from 'react';
 export default function Countdown(props) {
     const { className } = props;
     const eventDate = new Date(`May 31 ${new Date().getFullYear()} 00:00:00`);
-    const [mobileFlag, setMobileFlag] = useState(false);
-
+    const [scale, setScale] = useState('full');
     const [restTime, setRestTime] = useState({
         days: "00",
         hours: "00",
         minutes: "00",
         seconds: "00",
     });
-
-    const [timeFormat, setTimeFormat] = useState({
-        days: 'Days',
-        hours: 'Hours',
-        minutes: 'Minutes',
-        seconds: 'Seconds'
-    })
+    const timeFormat = {
+        full: {
+            days: 'Days',
+            hours: 'Hours',
+            minutes: 'Minutes',
+            seconds: 'Seconds'
+        },
+        short: {
+            days: 'DD',
+            hours: 'HH',
+            minutes: 'MM',
+            seconds: 'SS'
+        },
+    }
 
     function eventDateCounter() {
         const currentTime = new Date();
@@ -37,45 +43,27 @@ export default function Countdown(props) {
         return (+value < 10) ? `0${+value}` : value;
     }
 
-    function onResize(newTimeFormat) {
-        if (window.innerWidth <= 768) {
-            setTimeFormat(newTimeFormat)
-        }
-    }
-
-    useState(() => {
-        if (window.innerWidth <= 768) {
-            setMobileFlag(true);
-        } else {
-            setMobileFlag(false)
-        }
-    })
-
     useEffect(() => {
         setInterval(eventDateCounter, 1000);
     })
 
-    useEffect(() => {
-        if (mobileFlag) {
-            const newTimeFormat = {
-                days: 'DD',
-                hours: 'HH',
-                minutes: 'MM',
-                seconds: 'SS'
-            }
-            window.addEventListener('resize', onResize);
-            onResize(newTimeFormat);
+    function onResize() {
+        window.onresize = () => {
+            const currentScale = (window.innerWidth <= 992) ? 'short' : 'full';
+            setScale(currentScale);
         }
+    }
 
-        return () => window.removeEventListener('resize', onResize);
-    }, [] );
+    useEffect(() => {
+        onResize();
+    })
 
     return (
         <div className={`${className} countdown`} data-aos="fade-down" data-aos-delay="500" data-aos-duration="800">
-            <Timer className={'countdown__timer'} scale={timeFormat.days} value={restTime.days} />
-            <Timer className={'countdown__timer'} scale={timeFormat.hours} value={restTime.hours} />
-            <Timer className={'countdown__timer'} scale={timeFormat.minutes} value={restTime.minutes} />
-            <Timer className={'countdown__timer'} scale={timeFormat.seconds} value={restTime.seconds} />
+            <Timer className={'countdown__timer'} type={'days'} timeFormat={timeFormat[scale]} value={restTime.days} />
+            <Timer className={'countdown__timer'} type={'hours'} timeFormat={timeFormat[scale]} value={restTime.hours} />
+            <Timer className={'countdown__timer'} type={'minutes'} timeFormat={timeFormat[scale]} value={restTime.minutes} />
+            <Timer className={'countdown__timer'} type={'seconds'} timeFormat={timeFormat[scale]} value={restTime.seconds} />
         </div>
     );
 }

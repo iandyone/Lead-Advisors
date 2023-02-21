@@ -5,14 +5,13 @@ import { setSubscriptionSuccess } from "../../store/reducers/subscribtionSlice";
 import axios from "axios";
 import "./form.scss";
 
-
 export default function Form(props) {
     const { className, API_URL } = props;
     const [email, setEmail] = useState('');
     const dispatch = useDispatch();
 
     function isValidEmail(email) {
-        return /^[\w]{1}[\w-\.]*@[\w-]+\.[a-z]{2,4}$/i.test(email);
+        return /^[\w]{1}[\w-.]*@[\w-]+\.[a-z]{2,4}$/i.test(email);
     }
 
     async function submit(event, email) {
