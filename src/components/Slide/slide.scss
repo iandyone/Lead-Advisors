@@ -290,6 +290,32 @@
         position: relative;
         margin-bottom: 48px;
 
+        position: relative;
+        z-index: 100;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            transform: translateX(-100%);
+            background-color: $white;
+            transition: all .4s ease;
+            z-index: -1;
+        }
+        
+        &:hover{
+            color: $black;
+            transition: all .6s ease;
+            &::before {
+                transition: all 1s ease;
+                transform: translateX(-0%);
+            }
+        }
+
         @media (max-width: 1400px) {
             max-width: 180px;
             width: 180px;

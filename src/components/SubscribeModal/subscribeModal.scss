@@ -18,9 +18,15 @@
         background: url("../../assets/images/svg/mark.svg") center no-repeat;
         align-self: flex-end;
         margin-bottom: 48px;
+        transition: all 0.1s ease;
 
         &:hover {
             cursor: pointer;
+        }
+
+        &:active {
+            transition: all 0.1s ease;
+            transform: scale(0.8);
         }
     }
 
@@ -31,7 +37,7 @@
         text-align: center;
         text-transform: uppercase;
         color: $blue;
-        margin-bottom: 28px
+        margin-bottom: 28px;
     }
 
     &__text {
@@ -45,7 +51,5 @@
     &__button {
         @extend %button;
         width: 200px;
-
-        
     }
 }

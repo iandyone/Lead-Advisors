@@ -23,18 +23,27 @@
     &__link {
         position: absolute;
         right: 111px;
+
+        &:hover {
+            transform: scale(1.05);
+            transition: all .1s ease;
+        }
+        &:active {
+            transform: scale(0.95);
+            transition: all .1s ease;
+        }
+
         span {
             @extend %text;
             font-size: 20px;
             color: $white;
             padding-right: 35px;
             background: url('../../assets/images/svg/arrow-down.svg') right center no-repeat;
+            transition: all .1s ease;
 
             @media (max-width: 992px) {
                 font-size: 16px;
-                
             }
-            
         }
 
         @media (max-width: 1200px) {

@@ -49,8 +49,49 @@
     color: $white;
     background: $blue2;
     border-radius: 40px;
+    transition: all .1s ease;
+    position: relative;
+    overflow: hidden;
 
     &:hover {
         cursor: pointer;
+        &::before {
+            transform: translateX(200%) skewX(-30deg);
+        }
+    }
+    
+    &:active {
+        transition: all .1s ease;
+        transform: scale(0.95);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateX(-250%) skewX(-30deg);
+        transition: transform 0.7s ease-in-out;
+    
     }
 }
+
+
+// ::before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     width: 50%;
+//     background-color: rgba(255, 255, 255, 0.2);
+//     transform: translateX(-250%) skewX(-30deg);
+//     transition: transform 0.7s ease-in-out;
+
+// }
+
+// :hover::before {
+//     transform: translateX(200%) skewX(-30deg);
+// }
+
