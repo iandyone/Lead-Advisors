@@ -8,9 +8,10 @@ import './app.scss';
 import 'aos/dist/aos.css';
 
 export default function App() {
-    
     useEffect(() => {
-        AOS.init();
+        AOS.init({
+            once: true,
+        });
     })
 
     return (

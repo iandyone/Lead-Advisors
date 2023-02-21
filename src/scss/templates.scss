@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import "./variables.scss";
 
 %text {
     font-family: $Poppins;
@@ -15,28 +15,27 @@
 
 %title {
     font-family: $Poppins;
-        font-style: normal;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 104%;
+    text-transform: uppercase;
+    color: $blue;
+    opacity: 0.39;
+    margin-bottom: 8px;
+
+    @media (max-width: 992px) {
         font-weight: 700;
-        font-size: 72px;
+        font-size: 36px;
         line-height: 104%;
-        text-transform: uppercase;
-        color: $blue;
-        opacity: 0.39;
-        margin-bottom: 8px;
+        margin-bottom: 22px;
+    }
 
-        @media (max-width: 992px) {
-            font-weight: 700;
-            font-size: 36px;
-            line-height: 104%;
-            margin-bottom: 22px;
-        }
-
-        @media (max-width: 480px) {
-            text-align: center;
-            margin-bottom: 17px;
-        }
+    @media (max-width: 480px) {
+        text-align: center;
+        margin-bottom: 17px;
+    }
 }
-
 
 %button {
     @extend %text;
@@ -49,19 +48,20 @@
     color: $white;
     background: $blue2;
     border-radius: 40px;
-    transition: all .1s ease;
+    transition: all 0.1s ease;
     position: relative;
     overflow: hidden;
 
     &:hover {
         cursor: pointer;
+
         &::before {
             transform: translateX(200%) skewX(-30deg);
         }
     }
-    
+
     &:active {
-        transition: all .1s ease;
+        transition: all 0.1s ease;
         transform: scale(0.95);
     }
 
@@ -74,24 +74,5 @@
         background-color: rgba(255, 255, 255, 0.2);
         transform: translateX(-250%) skewX(-30deg);
         transition: transform 0.7s ease-in-out;
-    
     }
 }
-
-
-// ::before {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     width: 50%;
-//     background-color: rgba(255, 255, 255, 0.2);
-//     transform: translateX(-250%) skewX(-30deg);
-//     transition: transform 0.7s ease-in-out;
-
-// }
-
-// :hover::before {
-//     transform: translateX(200%) skewX(-30deg);
-// }
-

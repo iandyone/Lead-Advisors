@@ -206,10 +206,9 @@
         transform: translateX(-170px);
         text-align: left;
         position: relative;
-        z-index: 5;
-
         position: absolute;
         top: -35px;
+        z-index: 5;
 
         @media (max-width: 1400px) {
             transform: translateX(-250px);
@@ -289,7 +288,6 @@
         color: $slideText;
         position: relative;
         margin-bottom: 48px;
-
         position: relative;
         z-index: 100;
         overflow: hidden;
@@ -310,6 +308,7 @@
         &:hover{
             color: $black;
             transition: all .6s ease;
+
             &::before {
                 transition: all 1s ease;
                 transform: translateX(-0%);
@@ -320,6 +319,7 @@
             max-width: 180px;
             width: 180px;
         }
+
         @media (max-width: 992px) {
             flex-basis: auto;
             font-size: 16px;
@@ -339,6 +339,7 @@
         @media (max-width: 1600px) {
             height: 550px;
         }
+
         @media (max-width: 1100px) {
             height: 450px;
         }
@@ -354,7 +355,6 @@
         @media (max-width: 340px) {
             height: 320px;
         }
-
     }
 
     &__image {

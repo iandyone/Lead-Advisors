@@ -23,8 +23,7 @@ a {
     text-decoration: none;
 }
 
-html,
-body {
+html, body {
     height: 100%;
     width: 100%;
     min-height: 100vh;
@@ -35,9 +34,7 @@ body {
     scroll-behavior: smooth;
 }
 
-input,
-button,
-textarea {
+input, button, textarea {
     font-family: inherit;
 }
 
@@ -47,6 +44,7 @@ input::-ms-clear {
 
 button {
     cursor: pointer;
+
     &::-moz-focus-inner {
         padding: 0;
         border: 0;
@@ -57,11 +55,6 @@ ul li {
     list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
 }

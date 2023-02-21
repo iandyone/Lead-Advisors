@@ -18,7 +18,7 @@ export default function Main() {
                     <Countdown className="preview__countdown"/>
                     <div className="preview__link"  data-aos="fade-down" data-aos-delay="700" data-aos-duration="800">
                         <p className="preview__text">Check our event page when you wait:</p>
-                        <a href="http://www.google.com" className="preview__button" target='_blank' rel='noreferrer'><span>Go to the event</span></a>
+                        <a href="https://iandyone.github.io/CV" className="preview__button" target='_blank' rel='noreferrer'><span>Go to the event</span></a>
                     </div>
                 </section>
                 <Subscribe/>

@@ -6,7 +6,6 @@ export default function SubscribeModal(props) {
     const { className } = props;
     const subStatus = useSelector(state => state.subscription.isSubscriptionSuccess);
     const dispatch = useDispatch();
-
     const title = (subStatus) ? "success" : "error"
     const text = (subStatus) ? "You have successfully subscribed to the email newsletter" : "Incorrect email address. Subscription declined"
 

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function Countdown(props) {
     const { className } = props;
-    const eventDate = new Date(`May 31 ${new Date().getFullYear() + 1} 00:00:00`);
+    const eventDate = new Date(`May 31 ${new Date().getFullYear()} 00:00:00`);
     const [mobileFlag, setMobileFlag] = useState(false);
 
     const [restTime, setRestTime] = useState({
