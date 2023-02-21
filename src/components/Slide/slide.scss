@@ -10,23 +10,31 @@
         width: 100%;
         min-width: 690px;
     }
+
     @media (max-width: 760px) {
         min-width: auto;
     }
 
     &.active .slide__body {
         width: 100%;
-        max-width: 995px;
+        max-width: 803px;
         transition: all 1s ease;
 
         @media (max-width: 992px) {
             height: auto;
             max-height: 460px;
             max-width: 100%;
-            // min-height: 460px;
             width: 100%;
             min-width: 100px;
             transition: all 1s ease;
+        }
+
+        @media (max-width: 480px) {
+            max-height: 373px;
+        }
+
+        @media (max-width: 340px) {
+            max-height: 320px;
         }
     }
 
@@ -61,8 +69,6 @@
 
         @media (max-width: 480px) {
             column-gap: 16px;
-            // padding: 21px 40px;
-
             padding: 0px 20px;
             height: 64px;
         }
@@ -135,7 +141,6 @@
         transition: all 1s ease;
 
         @media (max-width: 992px) {
-            // height: 0;
             max-height: 0;
             max-width: none;
         }
@@ -157,6 +162,7 @@
         overflow: hidden;
         padding-left: 42px;
         transition: all 1s ease;
+        justify-content: flex-end;
 
         @media (max-width: 1400px) {
             padding-left: 20px;
@@ -167,8 +173,6 @@
 
         @media (max-width: 992px) {
             top: auto;
-            // bottom: 0;
-
             right: 0;
             height: 0;
             height: auto;
@@ -176,18 +180,21 @@
             max-height: 192px;
             width: 100%;
             padding-left: 0;
-            padding: 25px 40px 25px 40px;
+            padding: 25px 40px 41px 40px;
         }
 
         @media (max-width: 480px) {
             padding-left: 20px;
-            padding-bottom: 41px;
+            padding-bottom: 24px;
             max-height: 160px;
+        }
+
+        @media (max-width: 340px) {
+            padding: 8px 20px;
         }
     }
 
     &__number {
-        flex: 0 1 685px;
         display: inline-block;
         font-family: $SF;
         font-weight: 600;
@@ -201,13 +208,18 @@
         position: relative;
         z-index: 5;
 
+        position: absolute;
+        top: -35px;
+
         @media (max-width: 1400px) {
             transform: translateX(-250px);
         }
+
         @media (max-width: 1100px) {
             font-size: 270px;
             transform: translateX(-110px);
         }
+
         @media (max-width: 992px) {
             font-size: 152px;
             text-align: right;
@@ -216,48 +228,50 @@
             flex-basis: auto;
             position: absolute;
             right: 30px;
+            top: 10px;
         }
     }
 
     &__name {
-        flex: 0 0 42px;
         font-family: $SF;
         font-weight: 600;
         font-size: 24px;
         line-height: 120%;
         color: $white;
-
+        width: 210px;
+        padding-bottom: 12px;
+        
         @media (max-width: 992px) {
+            padding-bottom: 0px;
             flex-basis: auto;
             font-size: 18px;
             margin-bottom: 8px;
+            width: auto;
         }
     }
 
     &__text {
-        flex: 0 0 52px;
-        font-family: "SF Pro Display";
+        font-family: $SF;
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
         line-height: 150%;
         color: $slideText;
+        padding-bottom: 25px;
 
         @media (max-width: 992px) {
             flex-basis: auto;
             font-size: 16px;
-            margin-bottom: 30px;
+            padding-bottom: 30px;
         }
 
         @media (max-width: 480px) {
             font-size: 14px;
-            // margin-bottom: 36px;
-            margin-bottom: 18px;
+            padding-bottom: 18px;
         }
     }
 
     &__button {
-        flex: 0 0 62px;
         width: 100%;
         max-width: 256px;
         height: 62px;
@@ -273,11 +287,12 @@
         font-size: 18px;
         line-height: 120%;
         color: $slideText;
-        margin-bottom: 48px;
         position: relative;
+        margin-bottom: 48px;
 
         @media (max-width: 1400px) {
             max-width: 180px;
+            width: 180px;
         }
         @media (max-width: 992px) {
             flex-basis: auto;
@@ -286,7 +301,7 @@
             width: 170px;
             padding: 10px 10px;
             max-width: none;
-            margin-bottom: 0;
+            margin-bottom: 0px;
         }
     }
 
@@ -303,15 +318,17 @@
         }
 
         @media (max-width: 992px) {
-            // height: 445px;
             height: 460px;
         }
 
         @media (max-width: 480px) {
-            // height: 393px;
             height: 373px;
-            // height: 360px;
         }
+
+        @media (max-width: 340px) {
+            height: 320px;
+        }
+
     }
 
     &__image {
