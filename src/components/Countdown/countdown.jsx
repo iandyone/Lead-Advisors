@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function Countdown(props) {
     const { className } = props;
-    const eventDate = new Date(`May 31 ${new Date().getFullYear()} 00:00:00`);
+    const eventDate = new Date(`Dec 31 ${new Date().getFullYear()} 00:00:00`);
     const [scale, setScale] = useState('full');
     const [restTime, setRestTime] = useState({
         days: "00",
